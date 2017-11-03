@@ -1,83 +1,85 @@
-/* Please provide me a list of all houses that have not yet been renovated. */
+/* You are asked to provide an inventory report for
+a client. The report should include product
+name, stock information, supplier id, unit price,
+units on order & reorder level. For this report
+only include products that are still available
+(those not available are marked with a ‘1’ under
+discontinued). */
 
-SELECT * FROM build_info WHERE yr_renovated = 0
+/* Which type of discount was most frequently
+given? Produce a table set showing the
+frequency of each type of discount provided.
+(i.e., How many times was discount of 0, 0.05,
+etc.. applied?), along with the total $ value of the discounts */
 
-/* Please provide a list of all houses that have been renovated */
+/* How many unique customers have made a
+purchase in our system? What percent of these customers are
+"one and done" (make only one purchase ever)? */
 
-SELECT * FROM build_info WHERE yr_renovated != 0;
-SELECT * FROM build_info WHERE yr_renovated > 0;
+/*Among these customers that have at least
+one purchase we wish to target our most
+active shoppers for our “Northwind Loyalty
+Program”, a program that sends special
+offers, coupons, and event information. If
+we want the top 9 active customers, who
+(customerids is fine for now) should we
+choose? */
 
-/* Please provide me a list of all the houses and years they were built if they were built
-after 1940, starting with the oldest */
-SELECT yr_built, house_id
-FROM build_info
-WHERE yr_built >= 1940
-ORDER BY yr_built ASC;
+/* A consultant external to Northwind is doing
+an analysis on seafood. She wants a list
+that includes product name, unit price,
+units in stock, units on order, and reorder
+level for any seafood products. */
+
+/* Northwind analysts are wondering why
+some of the more expensive products are
+not selling as well as they once did. They
+ask to see a list of products that have a unit
+price above the mean unit price. Include
+product name, quantity per unit, unit price,
+and supplier id. */
+
+/* A recent study came out in The Economist
+stating that cities beginning with “m” spent
+more on products than other cities. Your
+manager reads this and asks you to provide
+order id & order date information for any
+company (customer) located in a city that starts
+with “m.” Your manager will need to have a
+contact name and phone number for each of
+these orders as well. */
+
+/* Recently, Northwind has lost business due to
+efficiency issues. Identify any orders that were
+shipped after the required delivery date
+(requireddate). Within these orders include
+order id, employee id, and which company was
+in charge of the shipping, including shipper
+company name and shipper phone number.
+(Note: shipvia is the shipper id for orders table) */
 
 
-/* Please provide me all the houses that have 2-4 bedrooms, more than 1.5 bathrooms, and are in the
-#3 / #4 condition */
+/* ADVANCED: Assume that at Northwind we
+calculate revenue in the following way:
+𝑅𝑒𝑣𝑒𝑛𝑢𝑒 $$$ = 1 − 𝑑𝑖𝑠𝑐𝑜𝑢𝑛𝑡 ∗ 𝑄𝑢𝑎𝑛𝑡𝑖𝑡𝑦 ∗ (𝑈𝑛𝑖𝑡 𝑃𝑟𝑖𝑐𝑒)
+Create a new column that shows the
+revenue brought in from each product in
+each order. Include the product name as
+well so we can begin to understand the key
+drivers of our business.
 
-SELECT house_ids
-FROM house_details
-WHERE bedrooms BETWEEN 2 AND 4
-AND bathrooms > 1.5
-AND condition IN (3,4);
+As a note: Unit Prices will vary, so the
+company policy is to always use the unit
+price that aligns with a specific order.
+*/
 
-
-/* Give me the exact location of houses that start with ID number of 9 */
--- use this example to show casting (house_id is originally a numeric variable)
-SELECT latitude, longitude
-FROM location_table
-WHERE house_id LIKE '9%';
-
--- this would be the correct way
-SELECT latitude, longitude, house_id
-FROM location_table
-WHERE house_id::text LIKE '9%'
-
-/* Can you tell me how many houses were built in each year? */
-SELECT yr_built, COUNT(yr_built) AS number_built
-FROM build_info
-GROUP BY yr_built;
-
-/* Can you tell me how many houses were built each year between 1980 and 2000? */
--- demonstrates use of HAVING statement
-
-SELECT yr_built, COUNT(yr_built) AS number_built
-FROM build_info
-GROUP BY yr_built
-HAVING yr_built BETWEEN 1980 AND 2000
-ORDER BY yr_built ASC;
-
-/* Please tell me all the different categories we have available in the
-pagila_mod database */
-
-SELECT * FROM category;
-
-/* Please provide me a list of all our customers' and employees' phone
-numbers and postal codes */
-SELECT phone, postal_code FROM address;
-
-/* Rename the above query so it is more readable */
-SELECT phone as "Phone Number", postal_code as "Postal Code" FROM address;
-
-/* Please provide all the information in the city and country tables */
-SELECT * FROM city JOIN country ON city.country_id = country.country_id;
-
-/* Please give me the last 10 countries entered into the database,
-which is determined by their city_id value */
-SELECT * FROM city JOIN country ON city.country_id = country.country_id 
-ORDER BY city_id desc LIMIT 10;
-
-/* Please tell me what our most expensive film rental rate is */
-SELECT * FROM film ORDER BY rental_rate DESC LIMIT 1;
-
-/* Please tell me what the average rental_rate is */
-SELECT AVG(rental_rate) FROM film;
-
-/* Please tell provide me all the films that are under 60 minutes long */
-SELECT * FROM film WHERE length < 60
-
-/* Please tell me the average rental rate for films under 60 minutes */
-SELECT avg(rental_rate) FROM film WHERE length < 60;
+/* ADVANCED: The Federal Trade
+Commission has requested information
+pertaining to company discounts. Provide a
+report for the FTC that includes the
+company id, name, and average discount
+received. The FTC is only interested in
+obtaining this information for companies
+receiving an average discount on orders
+that is above the overall average discount
+across all orders in the Northwind system. */

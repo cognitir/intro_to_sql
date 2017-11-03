@@ -42,18 +42,18 @@ FROM realtor_info
 WHERE first ILIKE '%D%a%';
 
 
-Sample 1: Produces output ending in 'da' - case insensitive
+--Sample 1: Produces output ending in 'da' - case insensitive
 
-Sample 2: Produces output where 'da' exists anywhere - case insensitive 
+--Sample 2: Produces output where 'da' exists anywhere - case insensitive 
 
-Sample 3: Produces output where 'da' is at the start of the word - case insensitive
+--Sample 3: Produces output where 'da' is at the start of the word - case insensitive
 
-Sample 4: Produces output where 'da' is the actual name - case insensitive
+--Sample 4: Produces output where 'da' is the actual name - case insensitive
 
-Sample 5: Produces output where word starts with 'd' and ends with 'a' - any length - case insensitive
+--Sample 5: Produces output where word starts with 'd' and ends with 'a' - any length - case insensitive
 
-Sample 6: Produces output where word starts with anything and ends with 'a'
+--Sample 6: Produces output where word starts with anything and ends with 'a'
 
-Sample 7: Any singular character start, followed with 'ia'
+--Sample 7: Any singular character start, followed with 'ia'
 
-Sample 8: Produces output for any 'd' followed by 'a' combination, does not have to be in order. 
+--Sample 8: Produces output for any 'd' followed by 'a' combination, does not have to be in order. 

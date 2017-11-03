@@ -1,2 +1,6 @@
 
 .DS_Store
+
+# powerpoint slides (upload pdfs instead!)
+.pptx
+.ppt
