@@ -63,7 +63,7 @@
 - key_column
 
 
-[Back](#database-schemas) | [Housing](##housing)
+[Back](#database-schemas) | [Housing](#housing)
 ### categories
 
 - categoryid
@@ -71,7 +71,7 @@
 - description
 - picture
 
-[Back](#database-schemas) | [Housing](##housing)
+[Back](#database-schemas) | [Housing](#housing)
 
 ### customers
 
@@ -87,7 +87,7 @@
 - phone
 - fax
 
-[Back](#database-schemas) | [Housing](##housing)
+[Back](#database-schemas) | [Housing](#housing)
 
 ### employees
 
@@ -539,7 +539,7 @@
 - name
 - last_update
 
-[Back](#database-schemas) | [Pagila-Mod](##pagila-mod)
+[Back](#database-schemas) | [Pagila-Mod](#pagila-mod)
 
 ### rental
 
