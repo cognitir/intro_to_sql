@@ -1,4 +1,4 @@
-/* Please provide me a list of all houses that have not yet been renovated. */
+/ase provide me a list of all houses that have not yet been renovated. */
 
 SELECT * FROM build_info WHERE yr_renovated = 0
 

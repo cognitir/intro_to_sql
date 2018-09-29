@@ -1,3 +1,6 @@
+/* Please give me the film name, id, and release year films with IDs under 100 */
+SELECT id, name, release FROM film WHERE id < 100;
+
 /* Please tell me what our most expensive film rental rate is */
 SELECT * FROM film ORDER BY rental_rate DESC LIMIT 1;
 
